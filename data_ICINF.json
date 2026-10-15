@@ -65,7 +65,7 @@
 	],
 	"s9": [
 		["Práctica Profesional","S91",0,20,13,"ELEC",["S81","S82", "S83","S84","S85","S86"],"A"],
-		["Taller de Proyectos Informáticos (ULAB 3)","S92",2,4,4,"ELEC",[],"I"],
+		["Taller de Proyectos Informáticos (ULAB 3)","S92",2,4,4,"ELEC",["S63"],"I"],
 		["Electivo Profesional","S93",4,3,4,"ELEC",[],"I"],
 		["Electivo Profesional","S94",4,3,4,"ELEC",[],"I"],
 		["Anteproyecto de Título","S95",3,5,5,"ELEC",["S81","S82", "S83","S84","S85","S86"],"I"]
