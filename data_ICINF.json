@@ -68,7 +68,7 @@
 		["Taller de Proyectos Informáticos (ULAB 3)","S92",2,4,4,"ELEC",[],"I"],
 		["Electivo Profesional","S93",4,3,4,"ELEC",[],"I"],
 		["Electivo Profesional","S94",4,3,4,"ELEC",[],"I"],
-		["Anteproyecto de Título","S95",3,5,5,"ELEC",["S82"],"I"]
+		["Anteproyecto de Título","S95",3,5,5,"ELEC",["S81","S82", "S83","S84","S85","S86"],"I"]
 	],
 	"s10": [
 ["Electivo Profesional","S101",4,3,4,"ELEC",[],"P"],		
