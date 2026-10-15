@@ -44,7 +44,7 @@
 	["Tecnologías Backend (ULAB 1)","S63",4,5,6,"CE1AI",["S53"],"P"],
 	["Arquitectura de Computadores","S64",4,4,5,"CE3TI",[],"P"],
 	["Inteligencia Artificial","S65",5,3,5,"CE1AI",["S55"],"P"],
-	["Inglés para Ingeniería","S66",2,3,3,"CFI",["S56"],"P"],
+	["Inglés para Ingeniería","S66",2,3,3,"CB",["S56"],"P"],
 	["Práctica Intermedia","S67",0,8,5,"ELEC",["S44"],"A"]
 	],
 	"s7": [
@@ -53,7 +53,7 @@
 ["Sistemas Operativos","S73",4,4,5,"CE3TI",[],"I"],
 ["Redes y Comunicación","S74",6,3,6,"CE3TI",["S64"],"I"],
 ["Deep Learning","S75",4,4,5,"CE1AI",["S65"],"I"],
-["Inglés Técnico para Informática","S76",2,3,3,"CFI",["S66"],"I"]
+["Inglés Técnico para Informática","S76",2,3,3,"CB",["S66"],"I"]
 	],
 	"s8": [
 ["Tecnologías en la Nube","S81",4,7,7,"CE3TI",["S74"],"P"],		
