@@ -1,37 +1,37 @@
 {
 	"s1": [
-		["Cálculo I","s11",6,4,6,"CB",[],"A"],
-		["Álgebra I","s12",6,4,6,"CB",[],"I"],
-		["Taller de Introducción a la Ingeniería","s13",4,8,8,"CB",[],"I"],
+		["Cálculo I","s11",6,4,6,"CI",[],"A"],
+		["Álgebra I","s12",6,4,6,"CI",[],"I"],
+		["Taller de Introducción a la Ingeniería","s13",4,8,8,"CI",[],"I"],
 		["Programación","s14",6,5,7,"CE1AI",[],"I"],
 		["Comunicación","s15",2,3,3,"CFI",[],"I"]
 	],
 	"s2": [
-		["Cálculo II","S21",6,4,6,"CB",["s11"],"A"],
-		["Álgebra II","S22",6,4,6,"CB",["s12"],"P"],
-		["Física Mecánica","S23",6,4,6,"CB",[],"P"],
+		["Cálculo II","S21",6,4,6,"CI",["s11"],"A"],
+		["Álgebra II","S22",6,4,6,"CI",["s12"],"P"],
+		["Física Mecánica","S23",6,4,6,"CI",[],"P"],
 		["Programación Avanzada","S24",4,5,6,"CE1AI",["s14"],"P"],
-		["Química","S25",2,4,4,"CB",[],"A"],
+		["Química","S25",2,4,4,"CI",[],"A"],
 		["Ciudadanía","S26",2,1,2,"CFI",[],"P"]
 	],
 	"s3": [
-	["Cálculo Multivariable","S31",5,5,6,"CB",["S21"],"A"],
-	["Estructuras Discretas","S32",3,5,5,"CB",["s12"],"I"],
-	["Electromagnetismo","S33",4,5,6,"CB",["S21"],"I"],
+	["Cálculo Multivariable","S31",5,5,6,"CI",["S21"],"A"],
+	["Estructuras Discretas","S32",3,5,5,"CI",["s12"],"I"],
+	["Electromagnetismo","S33",4,5,6,"CI",["S21"],"I"],
 	["Estructuras de Datos","S34",4,5,6,"CE1AI",["S24"],"I"],
 	["Economía","S35",4,3,4,"CE2PI",[],"A"],
 	["Inglés I","S36",2,3,3,"CFI",[],"I"]
 	],
 	"s4": [
-	["Ecuaciones Diferenciales","S41",5,5,6,"CB",["S31"],"A"],
-	["Estadística y Probabilidad","S42",4,4,5,"CB",["S21"],"P"],
-	["Ópticas y Ondas","S43",4,6,6,"CB",["S33"],"P"],
+	["Ecuaciones Diferenciales","S41",5,5,6,"CI",["S31"],"A"],
+	["Estadística y Probabilidad","S42",4,4,5,"CI",["S21"],"P"],
+	["Ópticas y Ondas","S43",4,6,6,"CI",["S33"],"P"],
 	["Bases de Datos","S44",6,6,8,"CE1AI",[],"P"],
 	["Electivo de área de conocimiento","S45",2,1,2,"ELEC",[],"A"],
 	["Inglés II","S46",2,3,3,"CFI",["S36"],"P"]
 	],
 	"s5": [
-	["Cálculo Numérico","S51",4,4,5,"CB",["S41"],"I"],
+	["Cálculo Numérico","S51",4,4,5,"CI",["S41"],"I"],
 	["Sistemas Digitales","S52",4,4,5,"CE3TI",["S33"],"I"],
 	["Tecnologías Frontend","S53",4,5,6,"CE1AI",["S44"],"I"],
 	["Big Data","S54",4,6,6,"CE1AI",["S44"],"I"],
@@ -44,7 +44,7 @@
 	["Tecnologías Backend (ULAB 1)","S63",4,5,6,"CE1AI",["S53"],"P"],
 	["Arquitectura de Computadores","S64",4,4,5,"CE3TI",[],"P"],
 	["Inteligencia Artificial","S65",5,3,5,"CE1AI",["S55"],"P"],
-	["Inglés para Ingeniería","S66",2,3,3,"CB",["S56"],"P"],
+	["Inglés para Ingeniería","S66",2,3,3,"CI",["S56"],"P"],
 	["Práctica Intermedia","S67",0,8,5,"ELEC",["S44"],"A"]
 	],
 	"s7": [
@@ -53,7 +53,7 @@
 ["Sistemas Operativos","S73",4,4,5,"CE3TI",[],"I"],
 ["Redes y Comunicación","S74",6,3,6,"CE3TI",["S64"],"I"],
 ["Deep Learning","S75",4,4,5,"CE1AI",["S65"],"I"],
-["Inglés Técnico para Informática","S76",2,3,3,"CB",["S66"],"I"]
+["Inglés Técnico para Informática","S76",2,3,3,"CI",["S66"],"I"]
 	],
 	"s8": [
 ["Tecnologías en la Nube","S81",4,7,7,"CE3TI",["S74"],"P"],		
