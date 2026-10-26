@@ -1098,9 +1098,9 @@
         </div>
 
         <div class="stat-pill">
-          <span class="stat-label" id="top-lic-label">Licenciatura (Sem. 8)</span>
+          <span class="stat-label" id="top-lic-label">Licenciatura (Sem. 1 al 8)</span>
           <div class="stat-value">
-            <span id="top-licenciatura-status" style="font-size:0.9rem;color:#fde047;">Pendiente (0/6 S8)</span>
+            <span id="top-licenciatura-status" style="font-size:0.9rem;color:#fde047;">Pendiente (0/48)</span>
           </div>
         </div>
 
@@ -1170,10 +1170,10 @@
           </button>
         </div>
 
-        <div class="licenciatura-config-inline" title="Configuración manual de la cantidad de asignaturas aprobadas del Semestre 8 exigidas para obtener la Licenciatura">
-          <label for="select-lic-min">Req. Licenciatura (Sem. 8):</label>
+        <div class="licenciatura-config-inline" title="Requisito de Licenciatura: aprobar todos los cursos desde el 1° hasta el 8° semestre (48 asignaturas)">
+          <label for="select-lic-min">Req. Licenciatura (1° a 8° Sem.):</label>
           <select id="select-lic-min">
-            <option value="6" selected>6 de 6 cursos (Todos)</option>
+            <option value="48" selected>48 de 48 cursos (Sem. 1 al 8)</option>
           </select>
         </div>
       </div>
@@ -1624,15 +1624,18 @@
 ];
 
     // ============================================================================
-    // 3. CONFIGURACIÓN PARAMETRIZABLE DEL PRERREQUISITO DE LICENCIATURA
-    // Por defecto exige TODOS los cursos del Semestre 8 aprobados (6 de 6).
-    // Si se desea exigir una cantidad menor de cursos del Semestre 8 manualmente:
-    //   - Modifique `minApprovedCount` a un número menor (ej. 4 o 5), o
-    //   - Edite el arreglo `requiredCourses` con los códigos específicos requeridos.
+    // 3. CONFIGURACIÓN DEL PRERREQUISITO DE LICENCIATURA EN CIENCIAS DE LA INGENIERÍA
+    // Exige haber aprobado TODOS los cursos desde el 1er hasta el 8vo semestre
+    // (48 asignaturas en total: semestres s1 a s8).
     // ============================================================================
+    const LICENCIATURA_SEMESTERS = ["s1", "s2", "s3", "s4", "s5", "s6", "s7", "s8"];
+    const LICENCIATURA_ALL_COURSES_UP_TO_S8 = LICENCIATURA_SEMESTERS.flatMap(
+      semKey => (DATA_ICINF[semKey] || []).map(item => String(item[1]).toUpperCase())
+    );
     const LICENCIATURA_CONFIG = {
-      requiredCourses: ["S81", "S82", "S83", "S84", "S85", "S86"], // Todos los cursos del Semestre 8
-      minApprovedCount: 6 // Cambiar este valor (1 a 6) si se requiere una cantidad menor de cursos aprobados
+      requiredCourses: LICENCIATURA_ALL_COURSES_UP_TO_S8, // Los 48 cursos desde Semestre 1 hasta Semestre 8
+      connectorCourses: ["S81", "S82", "S83", "S84", "S85", "S86"], // Cursos de cierre de 8vo semestre para trazado visual de líneas
+      minApprovedCount: LICENCIATURA_ALL_COURSES_UP_TO_S8.length // 48 cursos aprobados
     };
 
     // Mapa auxiliar: código Malla Nueva (en mayúsculas) -> lista de códigos DU416
@@ -1964,9 +1967,9 @@
           const licBar = document.createElement('div');
           licBar.className = 'milestone-bar locked-milestone';
           licBar.id = 'milestone-licenciatura';
-          licBar.title = 'Hito Académico: Licenciatura en Ciencias de la Ingeniería (Prerrequisito: cursos del Semestre 8 aprobados)';
+          licBar.title = 'Hito Académico: Licenciatura en Ciencias de la Ingeniería (Prerrequisito: aprobar todos los cursos desde el 1° hasta el 8° semestre - 48 asignaturas)';
           licBar.innerHTML = `
-            <div class="milestone-req-badge" id="lic-req-badge">Sem. 8<br/>0/6</div>
+            <div class="milestone-req-badge" id="lic-req-badge">Sem 1-8<br/>0/48</div>
             <div class="milestone-vertical-text">Licenciatura en Ciencias de la Ingeniería</div>
             <div class="milestone-req-badge" id="lic-status-icon">🔒</div>
           `;
@@ -2139,7 +2142,7 @@
       svg.appendChild(defs);
 
       const showAllApprovedLines = document.getElementById('chk-show-all-lines').checked;
-      const licReqSet = new Set(LICENCIATURA_CONFIG.requiredCourses.map(c => c.toUpperCase()));
+      const licReqSet = new Set(LICENCIATURA_CONFIG.connectorCourses.map(c => c.toUpperCase()));
       const edges = [];
 
       if (showAllApprovedLines) {
@@ -2361,18 +2364,18 @@
         );
       }
       if (licReqBadge) {
-        licReqBadge.innerHTML = `Sem. 8<br/>${licProg.approvedCount}/${licProg.minRequired}`;
+        licReqBadge.innerHTML = `Sem 1-8<br/>${licProg.approvedCount}/${licProg.minRequired}`;
       }
       if (licIcon) {
         licIcon.textContent = licProg.unlocked ? '🎓✓' : '🔒';
       }
       if (topLicLabel) {
-        topLicLabel.textContent = `Licenciatura (Req: ${licProg.minRequired} S8)`;
+        topLicLabel.textContent = `Licenciatura (Sem. 1 al 8)`;
       }
       if (topLicStatus) {
         topLicStatus.textContent = licProg.unlocked
-          ? `¡Obtenida! (${licProg.approvedCount}/${licProg.minRequired} S8 ✓)`
-          : `Pendiente (${licProg.approvedCount}/${licProg.minRequired} S8)`;
+          ? `¡Obtenida! (${licProg.approvedCount}/${licProg.minRequired} ✓)`
+          : `Pendiente (${licProg.approvedCount}/${licProg.minRequired})`;
         topLicStatus.style.color = licProg.unlocked ? '#4ade80' : '#fde047';
       }
 
@@ -2460,7 +2463,7 @@
     }
 
     // Persistencia local y Respaldo JSON
-    const STORAGE_KEY = 'ulagos_icinf_malla_state_v3';
+    const STORAGE_KEY = 'ulagos_icinf_malla_state_v4';
 
     function saveToLocalStorage() {
       try {
@@ -2505,7 +2508,7 @@
       }
       if (data.minCursosLicenciaturaS8) {
         const val = parseInt(data.minCursosLicenciaturaS8, 10);
-        if (val >= 1 && val <= 6) {
+        if (val >= 1 && val <= 48) {
           LICENCIATURA_CONFIG.minApprovedCount = val;
           const sel = document.getElementById('select-lic-min');
           if (sel) sel.value = String(val);
@@ -2562,7 +2565,7 @@
     // Selector de cantidad mínima de cursos del Semestre 8 para la Licenciatura
     document.getElementById('select-lic-min').addEventListener('change', (e) => {
       const val = parseInt(e.target.value, 10);
-      if (val >= 1 && val <= 6) {
+      if (val >= 1 && val <= 48) {
         LICENCIATURA_CONFIG.minApprovedCount = val;
         saveToLocalStorage();
         updateUI();
@@ -2610,7 +2613,7 @@
           .map(id => coursesById[id].displayCode),
         hitos: {
           licenciaturaObtenida: licProg.unlocked,
-          cursosSemestre8Aprobados: `${licProg.approvedCount}/${licProg.minRequired}`,
+          cursosHastaSemestre8Aprobados: `${licProg.approvedCount}/${licProg.minRequired}`,
           tituloProfesionalObtenido: titProg.unlocked,
           cursosPlanAprobados: `${titProg.approvedCount}/${titProg.totalRequired}`
         },
