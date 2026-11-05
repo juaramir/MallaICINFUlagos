@@ -4,7 +4,7 @@
 		["Química","CBI02",3,5,5,"CI",[],"I"],
 		["Taller de Introducción a la Ingeniería Informática","FDICI01",3,4,4,"CE3TI",[],"I"],
 		["Programación","FDCI02",6,5,7,"CE1AI",[],"I"],
-		["Habilidades Comunicativas para Ingen","FIN07",2,3,3,"CFI",[],"I"]
+		["Habilidades Comunicativas para Ingenieros","FIN07",2,3,3,"CFI",[],"I"]
 	],
 	"s2": [
 		["Introducción al CálculoI","CBI03",5,5,6,"CI",["CBI01"],"A"],
