@@ -28,15 +28,15 @@
 	["Estadística y Probabilidad","S42",4,4,5,"CI",["S21"],"P"],
 	["Ópticas y Ondas","S43",4,3,4,"CI",["S33"],"P"],
 	["Bases de Datos","S44",6,3,6,"CE1AI",[],"P"],
-	["Teoría de Automatas","S45",4,5,6,"CE1AI",["S32"],"P"],
+	["Sistemas Digitales","S45",4,5,6,"CE3TI",["S33"],"P"],
 	["Inglés II","S46",2,3,3,"CFI",["S36"],"P"]
 	],
 	"s5": [
 	["Cálculo Numérico","S51",4,4,5,"CI",["S41"],"I"],
-	["Sistemas Digitales","S52",4,6,6,"CE3TI",["S33"],"I"],
+			["Economía","S52",3,3,4,"CE2PI",[],"A"],
 	["Tecnologías Frontend","S53",4,6,6,"CE1AI",["S44"],"I"],
 	["Big Data","S54",3,6,6,"CE1AI",["S44"],"I"],
-		["Economía","S55",3,3,4,"CE2PI",[],"A"],
+["Teoría de Automatas","S55",4,6,6,"CE1AI",["S32"],"I"],
 	["Inglés III","S56",2,3,3,"CFI",["S46"],"I"]
 	],
 	"s6": [
@@ -44,7 +44,7 @@
 	["Electivo de área de conocimiento","S62",2,1,2,"ELEC",[],"P"],
 	["Tecnologías Backend (ULAB 1)","S63",4,4,5,"CE1AI",["S53"],"P"],
 	["Arquitectura de Computadores","S64",4,4,5,"CE3TI",[],"P"],
-	["Inteligencia Artificial","S65",5,4,6,"CE1AI",["S45"],"P"],
+	["Inteligencia Artificial","S65",5,4,6,"CE1AI",["S55"],"P"],
 	["Inglés para Ingeniería","S66",2,3,3,"CI",["S56"],"P"],
 	["Práctica Intermedia","S67",0,8,5,"ELEC",["S44"],"A"]
 	],
